@@ -67,7 +67,8 @@ public class listas {
         return listaEnteros.size();
     }
 
-    //Método que reciba una lista de enteros, y retorne la verdadero si y sólo si la lista está vacía.
+    //Método que reciba una lista de enteros, y retorne la verdadero
+    // si y sólo si la lista está vacía.
     public static boolean esListaEnterosVacia (ArrayList<Integer> listaEnteros) {
 
         if (listaEnteros.isEmpty() == true) {
@@ -98,7 +99,6 @@ public class listas {
     }
 
     //Método que reciba una lista de enteros, y retorne el menor.
-    // 4 5 1
     public static int obtenerMenor (ArrayList<Integer> listaNumeros) {
         int min = Integer.MAX_VALUE;
 
@@ -109,6 +109,47 @@ public class listas {
         }
 
         return min;
+    }
+
+
+    //Método que reciba una lista de enteros, y retorne el mayor.
+    public static int obtenerMayor (ArrayList<Integer> listaNumeros) {
+        int max = Integer.MIN_VALUE;
+
+        for (int i = 0; i < listaNumeros.size(); i++) {
+            if (listaNumeros.get(i) < max) {
+                max = listaNumeros.get(i);
+            }
+        }
+
+        return max;
+    }
+
+    //Método que reciba una lista de enteros, y retorne el mayor.
+    public static boolean todosVerdaderos (ArrayList<Boolean> listaBooleanos) {
+
+        for (int i = 0; i < listaBooleanos.size(); i++) {
+            if (listaBooleanos.get(i) == false) {
+                return false;
+            }
+        }
+        return  true;
+    }
+
+
+    // Método leerValores(): pide por teclado los números y
+    // los almacena en el ArrayList. La lectura acaba cuando
+    // se introduce el valor -99.
+     public static ArrayList<Integer> leerValores () {
+        Scanner input = new Scanner (System.in);
+        ArrayList<Integer> listaNumeros = new ArrayList<Integer>();
+        int num = 0;
+        while (num != 99){
+            num = input.nextInt();
+            listaNumeros.add(num);
+
+        }
+        return listaNumeros;
     }
 
 }
